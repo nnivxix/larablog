@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
@@ -19,17 +20,7 @@ Route::get('/about', function() {
 
 Route::prefix('/blog')->group(function(){
 
-  Route::get('/', function(){
-    return view('blogs', [
-      'title' => 'Blogs',
-      'blogs' => Post::all()
-    ]);
-  });
+  Route::get('/', [PostController::class, 'index'] );
+  Route::get('/{slug}', [PostController::class, 'show']);
 
-  Route::get('/{slug}', function($slug) {
-    return view('blog', [
-      'title' => 'single blog',
-      'post' => Post::find($slug)
-    ]);
-  });
 });
