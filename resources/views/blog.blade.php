@@ -2,7 +2,6 @@
 
 @section('container')
 
-<h1>single post {{ $slug }}</h1>
 
 <h2>{{ $post['title'] }}</h2>
 <h5>{{ $post['author'] }}</h5>
