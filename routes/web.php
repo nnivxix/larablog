@@ -21,6 +21,6 @@ Route::get('/about', function() {
 Route::prefix('/blog')->group(function(){
 
   Route::get('/', [PostController::class, 'index'] );
-  Route::get('/{slug}', [PostController::class, 'show']);
+  Route::get('/{post:slug}', [PostController::class, 'show']);
 
 });
