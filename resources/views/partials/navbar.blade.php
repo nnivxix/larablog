@@ -10,7 +10,7 @@
             <a class="nav-link text-white {{ $title === 'Home' ? 'active fw-semibold' : '' }}" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white {{ $title === 'Blogs' ? 'active fw-semibold' : '' }}" href="/blog">Blog</a>
+            <a class="nav-link text-white {{ $title === 'Blogs' || 'single blog' ? 'active fw-semibold' : '' }}" href="/blog">Blog</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white {{ $title === 'About' ? 'active fw-semibold' : '' }}" href="/about">About</a>
