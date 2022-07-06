@@ -7,13 +7,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="text-white navbar-nav">
           <li class="nav-item">
-            <a class="nav-link text-white {{ $title === 'Home' ? 'active' : '' }}" aria-current="page" href="/">Home</a>
+            <a class="nav-link text-white {{ $title === 'Home' ? 'active fw-semibold' : '' }}" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white {{ $title === 'Blog' ? 'active' : '' }}" href="/blog">Blog</a>
+            <a class="nav-link text-white {{ $title === 'Blogs' ? 'active fw-semibold' : '' }}" href="/blog">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white {{ $title === 'About' ? 'active' : '' }}" href="/about">About</a>
+            <a class="nav-link text-white {{ $title === 'About' ? 'active fw-semibold' : '' }}" href="/about">About</a>
           </li>
         </ul>
       </div>

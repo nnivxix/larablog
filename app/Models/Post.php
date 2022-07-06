@@ -9,6 +9,10 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'slug','excerpt', 'body'];
+    protected $fillable = ['title','category_id', 'slug','excerpt', 'body'];
 
+    public function category()
+    {
+      return $this->belongsTo(Category::class);
+    }
 }
