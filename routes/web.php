@@ -19,17 +19,16 @@ Route::get('/about', function() {
   ]);
 });
 
+Route::controller(PostController::class)->group(function() {
 
-Route::prefix('/blog')->group(function(){
+  Route::prefix('/blog')->group(function(){
+    Route::get('/', 'index' );
+    Route::get('/{post:slug}', 'show');
+  });
 
-  Route::get('/', [PostController::class, 'index'] );
-  Route::get('/{post:slug}', [PostController::class, 'show']);
-
+  Route::get('/categories','categories');
+  Route::get('/category/{category:slug}', 'category');
+  Route::get('/author/{author:username}', 'author');
 });
 
-Route::get('/categories', [PostController::class, 'categories']);
-
-Route::get('/category/{category:slug}', [PostController::class, 'category']);
-
-Route::get('/author/{author:username}', [PostController::class, 'author']);
 Route::redirect('/author', '/blog');
