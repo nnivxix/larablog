@@ -27,24 +27,9 @@ Route::prefix('/blog')->group(function(){
 
 });
 
-Route::get('/categories', function() {
-  return view('categories', [
-    'title'=> 'List Category',
-    'categories' => Category::all()
-  ]);
-});
+Route::get('/categories', [PostController::class, 'categories']);
 
-Route::get('/category/{category:slug}', function (Category $category) {
-  return view('category', [
-    'title' => 'List Post by category',
-    'posts' => $category->post,
-    'category' => $category->name
-  ]);
-});
+Route::get('/category/{category:slug}', [PostController::class, 'category']);
 
-Route::get('/author/{author:username}', function(User $author) {
-  return view('posts', [
-    'title' => 'post by auhtor',
-    'posts' => $author->post
-  ]);
-});
+Route::get('/author/{author:username}', [PostController::class, 'author']);
+Route::redirect('/author', '/blog');
