@@ -1,0 +1,15 @@
+.card-responsive {
+  width: 100% !important;
+}
+
+@media (min-width: 768px) {
+  .card-responsive {
+    width: 46% !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  .card-responsive {
+    width: 30% !important;
+  }
+}
