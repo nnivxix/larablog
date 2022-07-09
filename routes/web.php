@@ -27,10 +27,6 @@ Route::controller(PostController::class)->group(function() {
     Route::get('/', 'index' );
     Route::get('/{post:slug}', 'show');
   });
-
   Route::get('/categories','categories');
-  Route::get('/category/{category:slug}', 'category');
-  Route::get('/author/{author:username}', 'author');
 });
 
-Route::redirect('/author', '/blog');

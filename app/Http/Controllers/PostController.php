@@ -11,9 +11,20 @@ class PostController extends Controller
 {
   public function index()
   {
+    $title = '';
+    if (request('category')) {
+      $category = Category::firstWhere('slug', request('category'));
+      $title = ' in ' . $category->name;
+    }
+
+    if (request('author')) {
+      $user = User::firstWhere('username', request('author'));
+      $title = ' in ' . $user->name;
+    }
+
     return view('posts', [
-      'title' => 'All posts',
-      'posts' => Post::with(['author', 'category'])->latest()->get(), // parameter with please check model Post there are have many methods relations
+      'title' => 'All posts' . $title,
+      'posts' => Post::with(['author', 'category'])->latest()->filter(request(['search', 'category', 'author']))->paginate(5)->withQueryString(), // parameter with please check model Post there are have many methods relations
       'active' => 'post'
     ]);
   }
