@@ -19,6 +19,15 @@
             <a class="nav-link text-white {{ $active === 'categories' ? 'active fw-semibold' : '' }}" href="/categories">Categories</a>
           </li>
         </ul>
+
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link text-white {{ $active === 'login' ? 'active fw-semibold' : '' }}" aria-current="page" href="/login">Login</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link text-white {{ $active === 'register' ? 'active fw-semibold' : '' }}" aria-current="page" href="/register">register</a>
+          </li> -->
+        </ul>
       </div>
     </div>
   </nav>
