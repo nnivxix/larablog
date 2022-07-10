@@ -21,9 +21,22 @@
         </ul>
 
         <ul class="navbar-nav ms-auto">
+          @auth
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{ auth()->user()->name }}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/dashboard">My Dashboard</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="/logout">Logout</a></li>
+            </ul>
+          </li>
+          @else
           <li class="nav-item">
             <a class="nav-link text-white {{ $active === 'login' ? 'active fw-semibold' : '' }}" aria-current="page" href="/login">Login</a>
           </li>
+          @endauth
           <!-- <li class="nav-item">
             <a class="nav-link text-white {{ $active === 'register' ? 'active fw-semibold' : '' }}" aria-current="page" href="/register">register</a>
           </li> -->

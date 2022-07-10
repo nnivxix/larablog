@@ -2,7 +2,7 @@
 
 @section('container')
 
-<main class="form-signin w-100 m-auto ">
+<main class=" w-100 m-auto ">
   <div class="row justify-content-center align-items-center h-100">
     <div class="col-md-4 col-lg-6">
       <h1 class="h3 mb-3 fw-normal">Register An Account</h1>
@@ -11,7 +11,8 @@
         <div class="form-floating">
           <input type="text" class="form-control @error('username')
             is-invalid
-          @enderror" id="username" name="username" placeholder="name@example.com" value="{{ old('username') }}">
+          @enderror" id="username" name="username"
+          placeholder="name@example.com" value="{{ old('username') }}" autofocus>
           <label for="username">Username</label>
           @error('username')
             <div class="invalid-feedback">

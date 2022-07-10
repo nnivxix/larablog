@@ -32,7 +32,10 @@ Route::controller(PostController::class)->group(function() {
 });
 
 Route::controller(UserController::class)->group(function() {
-  Route::get('/login', 'login');
-  Route::get('/register', 'register');
+  Route::get('/login', 'login')->name('login')->middleware('guest');
+  Route::post('/login', 'postLogin');
+  Route::get('/register', 'register')->middleware('guest');
   Route::post('/register', 'postRegister');
+  Route::get('/dashboard', 'dashboard')->middleware('auth');
+  Route::get('/logout', 'logout')->middleware('auth');
 });

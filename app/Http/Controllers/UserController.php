@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -37,5 +38,35 @@ class UserController extends Controller
     User::create($validationData);
     // $request->session()->flash('success', 'Register Account is success, please login!');
     return redirect('/login')->with('success', 'Register Account is success, please login!');
+  }
+
+  public function postLogin(Request $request)
+  {
+    $credential = $request->validate([
+      'email' => 'required|email:dns',
+      'password' => 'required'
+    ]);
+    if (Auth::attempt($credential)) {
+      $request->session()->regenerate();
+      return redirect()->intended('/dashboard');
+    }
+
+    return back()->with('error', 'Login Failed!');
+  }
+
+  public function dashboard()
+  {
+    return view('users.dashboard');
+  }
+
+  public function logout(Request $request)
+  {
+    Auth::logout();
+
+    $request->session()->invalidate();
+
+    $request->session()->regenerateToken();
+
+    return redirect('/');
   }
 }
