@@ -5,11 +5,20 @@
 <main class="form-signin w-100 m-auto ">
   <div class="row justify-content-center align-items-center h-100">
     <div class="col-10 col-md-8 col-lg-6">
+    @if (session()->has('success'))
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{session('success')}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    @endif
+
       <form>
         <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
         <div class="form-floating">
-          <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+          <input type="email" class="form-control @error('email')
+            is-invalid
+          @enderror" id="email" name="email" placeholder="name@example.com">
           <label for="email">Email address</label>
         </div>
         <div class="form-floating">
