@@ -56,7 +56,7 @@ class UserController extends Controller
 
   public function dashboard()
   {
-    return view('users.dashboard');
+    return view('dashboard.index');
   }
 
   public function logout(Request $request)

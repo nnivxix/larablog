@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardPostController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Models\Category;
@@ -39,3 +40,5 @@ Route::controller(UserController::class)->group(function() {
   Route::get('/dashboard', 'dashboard')->middleware('auth');
   Route::get('/logout', 'logout')->middleware('auth');
 });
+
+Route::resource('dashboard/posts', DashboardPostController::class)->middleware('auth');
