@@ -1,7 +1,7 @@
 @extends('dashboard.layouts.main')
 
-
 @section('container')
+<a href="/dashboard/posts/create" class="btn btn-primary my-3" role="button" aria-label="create post" title="create a post">Create Post</a>
 <h2>All My Post</h2>
 <div class="table-responsive">
   <table class="table table-striped table-sm">

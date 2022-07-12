@@ -7,12 +7,13 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.98.0">
-  <title>Dashboard Template · Bootstrap v5.2</title>
+  <title>Dashboard Larablog</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/">
 
 
 
+  <link rel="stylesheet" href="/css/trix.css">
   <link rel="stylesheet" href="/css/dashboard.css">
 
   <!-- CSS only -->
@@ -34,6 +35,7 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+  <script src="/js/trix.js"></script>
   <script src="/js/dashboard.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 

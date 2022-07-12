@@ -41,4 +41,15 @@ Route::controller(UserController::class)->group(function() {
   Route::get('/logout', 'logout')->middleware('auth');
 });
 
+Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 Route::resource('dashboard/posts', DashboardPostController::class)->middleware('auth');
+
+Route::prefix('/coba')->group(function() {
+  Route::get('/1', function() {
+    return request(['title', 'name']);
+  });
+  Route::get('/2', function(){
+    return request();
+  });
+
+});
