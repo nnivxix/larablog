@@ -11,7 +11,7 @@
         @endif
 @section('container')
 <div class="col-lg-8">
-  <form action="/dashboard/posts" method="POST">
+  <form action="/dashboard/posts" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="mb-3">
       <label for="title" class="form-label">Title</label>
@@ -42,6 +42,16 @@
         @endforeach
       </select>
     </div>
+    <div class="input-group mb-3">
+      <input type="file" class="form-control @error('image')
+        is-invalid
+      @enderror" id="image" name="image">
+      <label class="input-group-text" for="image">Upload</label>
+      @error('image')
+        <p class="text-danger">{{ $message }}</p>
+      @enderror
+    </div>
+
     <div class="mb-3">
       <label for="body" class="form-label">Body</label>
       @error('body')

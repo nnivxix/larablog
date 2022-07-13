@@ -11,7 +11,7 @@ class Post extends Model
     use HasFactory;
     use Sluggable;
 
-    protected $fillable = ['title','user_id','category_id', 'slug','excerpt', 'body'];
+    protected $fillable = ['title','user_id','category_id', 'slug','image','excerpt', 'body'];
 
     public function scopeFilter($query, array $filters)
     {

@@ -19,7 +19,11 @@
           <span data-feather="trash-2"></span> Delete My Posts
         </button>
       </form>
-      <!-- <img src="https://source.unsplash.com/1200x600?{{$post->category->slug}}" loading="lazy" class="card-img-top img-fluid my-3" alt="{{ $post->slug }}"> -->
+      @if ($post->image)
+        <img src="{{ asset('storage/' . $post->image) }}" loading="lazy" class="card-img-top img-fluid my-3" alt="{{ $post->slug }}">
+      @else
+        <img src="https://source.unsplash.com/1200x600?{{$post->category->slug}}" loading="lazy" class="card-img-top img-fluid my-3" alt="{{ $post->slug }}">
+      @endif
 
 
       <p>{!! $post->body !!}</p>
