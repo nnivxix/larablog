@@ -9,7 +9,7 @@
       <a href="/dashboard/posts" class="btn btn-success m-2">
         <span data-feather="arrow-left"></span> Back To My Posts
       </a>
-      <a href="/dashboard/posts" class="btn btn-warning m-2">
+      <a href="/dashboard/posts/{{$post->slug}}/edit" class="btn btn-warning m-2">
         <span data-feather="edit"></span> Back To My Posts
       </a>
       <form action="/dashboard/posts/{{$post->slug}}" method="post" class="d-inline">

@@ -60,8 +60,12 @@ class DashboardPostController extends Controller
       ]);
     }
 
-    public function edit($id)
+    public function edit(Post $post)
     {
+      return view('dashboard.posts.edit', [
+        'post' => $post,
+        'categories' => Category::all()
+      ]);
         //
     }
 
@@ -72,9 +76,31 @@ class DashboardPostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        //
+      // buat daulu varuablenya
+      $rules =[
+        'title' => 'required|max:255',
+        'category_id' => 'required',
+        'body' => 'required'
+      ];
+
+      // jika apa yang kita input 'slug' tidak sama dengan 'slug' milik post
+      if ($request->slug != $post->slug){
+        $rules['slug'] ='required|unique:posts';
+      }
+
+      // masukan rules-nya ke validate
+      $validatedData = $request->validate($rules);
+
+      // tambahkan 'user_id' dan excerpt
+      $validatedData['user_id'] = auth()->user()->id;
+      $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
+
+      Post::where('id', $post->id)
+        ->update($validatedData);
+
+      return redirect('/dashboard/posts')->with('success', 'Post has been updated!');
     }
 
     /**
