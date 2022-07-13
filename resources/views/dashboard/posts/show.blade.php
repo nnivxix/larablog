@@ -12,10 +12,14 @@
       <a href="/dashboard/posts" class="btn btn-warning m-2">
         <span data-feather="edit"></span> Back To My Posts
       </a>
-      <a href="/dashboard/posts" class="btn btn-danger m-2">
-        <span data-feather="trash-2"></span> Back To My Posts
-      </a>
-      <img src="https://source.unsplash.com/1200x600?{{$post->category->slug}}" loading="lazy" class="card-img-top img-fluid my-3" alt="{{ $post->slug }}">
+      <form action="/dashboard/posts/{{$post->slug}}" method="post" class="d-inline">
+        @method('DELETE')
+        @csrf
+        <button class="btn btn-danger m-2" onclick="return confirm('Confirm, do you want to delete this post?')">
+          <span data-feather="trash-2"></span> Delete My Posts
+        </button>
+      </form>
+      <!-- <img src="https://source.unsplash.com/1200x600?{{$post->category->slug}}" loading="lazy" class="card-img-top img-fluid my-3" alt="{{ $post->slug }}"> -->
 
 
       <p>{!! $post->body !!}</p>

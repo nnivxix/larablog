@@ -5,12 +5,12 @@
 <a href="/dashboard/posts/create" class="btn btn-primary my-3" role="button" aria-label="create post" title="create a post">Create Post</a>
 <h2>All My Post</h2>
 @if (session()->has('success'))
-<div class="alert alert-success alert-dismissible fade show" role="alert">
+<div class="alert alert-success alert-dismissible fade show col-lg-8" role="alert">
   <strong>{{ session('success') }}</strong>
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 @endif
-<div class="table-responsive">
+<div class="table-responsive col-lg-8">
   <table class="table table-striped table-sm">
     <thead>
       <tr>
@@ -33,9 +33,15 @@
           <a href="/dashboard/posts/{{$post->slug}}" class="badge bg-warning">
             <span data-feather="edit"></span>
           </a>
-          <a href="/dashboard/posts/{{$post->slug}}" class="badge bg-danger">
-            <span data-feather="trash-2"></span>
-          </a>
+          <form action="/dashboard/posts/{{$post->slug}}" method="post" class="d-inline">
+            @method('DELETE')
+            @csrf
+            <button class="badge bg-danger border-0"
+            onclick="return confirm('Confirm, do you want to delete this post?')">
+              <span data-feather="trash-2"></span>
+            </button>
+          </form>
+
         </td>
       </tr>
       @endforeach
