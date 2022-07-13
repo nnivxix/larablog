@@ -1,8 +1,15 @@
 @extends('dashboard.layouts.main')
 
 @section('container')
+
 <a href="/dashboard/posts/create" class="btn btn-primary my-3" role="button" aria-label="create post" title="create a post">Create Post</a>
 <h2>All My Post</h2>
+@if (session()->has('success'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>{{ session('success') }}</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
 <div class="table-responsive">
   <table class="table table-striped table-sm">
     <thead>
