@@ -1,7 +1,7 @@
 ![larablog image](./public/img/larablog.jpg)
 
 
-# Larablog [In Developing] ⚙🧰🦾
+# Larablog [Development] ⚙🧰🦾
 
 ## About
 
