@@ -1,7 +1,7 @@
 ![larablog image](./public/img/larablog.jpg)
 
 
-# Larablog
+# Larablog [In Developing]
 
 ## About
 
@@ -41,4 +41,4 @@ The features that will be developed are
 
 ## Thanks
 
-Thanks to the Unpas Web Programming channel for making the tutorial, this really adds to my knowledge about PHP Laravel and also the Programmers channel of the Age of Now who has made basic Laravel tutorials.
+Thanks to the [Unpas Web Programming ](https://youtube.com/playlist?list=PLFIM0718LjIWiihbBIq-SWPU6b6x21Q_2) channel for making the tutorial, this really adds to my knowledge about PHP Laravel and also [Programmers Zaman Now](https://youtu.be/ClMX6TXvh_o) who has made basic Laravel tutorials.
