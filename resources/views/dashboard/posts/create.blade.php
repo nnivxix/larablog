@@ -43,10 +43,12 @@
       </select>
     </div>
     <div class="input-group mb-3">
-      <input type="file" class="form-control @error('image')
+
+      <img class="img-preview img-fluid d-block">
+      <!-- <label class="input-group-text" for="image">Upload</label> -->
+      <input onchange="previewImg()"  type="file" class="form-control @error('image')
         is-invalid
       @enderror" id="image" name="image">
-      <label class="input-group-text" for="image">Upload</label>
       @error('image')
         <p class="text-danger">{{ $message }}</p>
       @enderror
@@ -60,7 +62,7 @@
       <input id="body" type="hidden" name="body" class="@error('body') is-invalid @enderror" value="{{ old('body') }}">
       <trix-editor input="body"></trix-editor>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Create New Post</button>
   </form>
 </div>
 <style>
@@ -79,9 +81,25 @@
   });
 
   document.addEventListener('trix-file-accept', function(e) {
-  e.preventDefault();
+    e.preventDefault();
+  });
 
-});
+    function previewImg(){
+      const image = document.querySelector('#image');
+      const imagePreview = document.querySelector('.img-preview');
+
+      imagePreview.style.display = 'block';
+
+      const oFReader = new FileReader();
+      oFReader.readAsDataURL(image.files[0]);
+
+      oFReader.onload = function(oFREvent){
+        imagePreview.src = oFREvent.target.result;
+        imagePreview.alt = "preview image post";
+        imagePreview.title = "preview image post";
+      }
+    }
+
 </script>
 @endsection
 
