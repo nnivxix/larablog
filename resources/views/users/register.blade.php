@@ -63,3 +63,6 @@
 </main>
 
 @endsection
+<div style="  position: absolute;bottom: 0;width: 80%;">
+                @include('partials.footer')
+            </div>
