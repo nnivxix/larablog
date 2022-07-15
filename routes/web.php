@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardPostController;
+use App\Http\Controllers\DashboardCategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Models\Category;
@@ -43,6 +44,8 @@ Route::controller(UserController::class)->group(function() {
 
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 Route::resource('dashboard/posts', DashboardPostController::class)->middleware('auth');
+Route::resource('dashboard/categories', DashboardCategoryController::class)->except('show')->middleware('superAdmin');
+
 
 Route::prefix('/coba')->group(function() {
   Route::get('/1', function() {

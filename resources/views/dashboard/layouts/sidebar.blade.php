@@ -8,11 +8,20 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {{ Request::is('dashboard/posts') ? 'active' : '' }}" href="/dashboard/posts">
+        <a class="nav-link {{ Request::is('dashboard/posts*') ? 'active' : '' }}" href="/dashboard/posts">
           <span data-feather="file-text" class="align-text-bottom"></span>
           My Posts
         </a>
       </li>
+      @can('admin')
+      <hr>
+      <li class="nav-item">
+        <a class="nav-link {{ Request::is('dashboard/categories') ? 'active' : '' }}" href="/dashboard/categories">
+          <span data-feather="grid" class="align-text-bottom"></span>
+          Category
+        </a>
+      </li>
+      @endcan
     </ul>
   </div>
 </nav>
