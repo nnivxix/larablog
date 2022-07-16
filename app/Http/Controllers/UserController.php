@@ -50,6 +50,7 @@ class UserController extends Controller
       $request->session()->regenerate();
       return redirect()->intended('/dashboard');
     }
+    
 
     return back()->with('error', 'Login Failed!');
   }

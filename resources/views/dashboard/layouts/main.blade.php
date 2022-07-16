@@ -8,6 +8,7 @@
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.98.0">
   <title>Dashboard Larablog</title>
+  <link rel="shortcut icon" href="{{asset('/favicons/favicon.ico')}}" type="image/x-icon">
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/dashboard/">
 

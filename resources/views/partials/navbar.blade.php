@@ -7,16 +7,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="text-white navbar-nav">
           <li class="nav-item">
-            <a class="nav-link text-white {{ $active === 'home' ? 'active fw-semibold' : '' }}" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link text-white {{ $active === 'post' ? 'active fw-semibold' : '' }}" href="/blog">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white {{ $active === 'about' ? 'active fw-semibold' : '' }}" href="/about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white {{ $active === 'categories' ? 'active fw-semibold' : '' }}" href="/categories">Categories</a>
           </li>
         </ul>
 

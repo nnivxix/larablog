@@ -11,24 +11,20 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('home', [
-      'title' => 'Home',
-      'active' => 'home'
-    ]);
+    return redirect('/blog');
 });
 
-Route::get('/about', function() {
-  return view('about', [
-    'title' => 'About',
-    'active' => 'about'
-  ]);
+Route::fallback(function () {
+  return view('errors.4xx');
 });
-
 Route::controller(PostController::class)->group(function() {
 
   Route::prefix('/blog')->group(function(){
     Route::get('/', 'index' );
     Route::get('/{post:slug}', 'show');
+    Route::fallback(function() {
+      view('errors.4xx');
+    });
   });
   Route::get('/categories','categories');
 });
@@ -44,6 +40,8 @@ Route::controller(UserController::class)->group(function() {
 
 Route::get('/dashboard/posts/checkSlug', [DashboardPostController::class, 'checkSlug'])->middleware('auth');
 Route::resource('dashboard/posts', DashboardPostController::class)->middleware('auth');
+
+Route::get('/dashboard/categories/checkSlug', [DashboardCategoryController::class, 'checkSlug'])->middleware('auth');
 Route::resource('dashboard/categories', DashboardCategoryController::class)->except('show')->middleware('superAdmin');
 
 

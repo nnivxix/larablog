@@ -1,7 +1,6 @@
-![larablog image](./public/img/larablog.jpg)
-
-
 # Larablog [Development] ⚙🧰🦾
+
+![larablog image](./public/img/larablog.jpg)
 
 ## About
 
@@ -25,19 +24,17 @@ Larablog is built with Laravel and the database using MySql, you can download it
 
 3. Wait until done and happy coding 🤟✋🤚
 
-
 ## Features
 
 The features that will be developed are
 
-- [ ] Homepage
-
-- [ ] About
+- [ ] ~~Homepage ~~
+- [ ] ~~About ~~
 - [x] List Posts
 - [x] Show Post
-- [x]  Navbar
-- [ ]   Footer
-- [ ]    reusable code
+- [x] Navbar
+- [x] Footer
+- [ ] reusable code
 
 ## Thanks
 
