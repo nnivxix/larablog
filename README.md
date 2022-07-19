@@ -28,8 +28,6 @@ Larablog is built with Laravel and the database using MySql, you can download it
 
 The features that will be developed are
 
-- [ ] ~~Homepage ~~
-- [ ] ~~About ~~
 - [x] List Posts
 - [x] Show Post
 - [x] Navbar
